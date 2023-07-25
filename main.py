@@ -4,7 +4,8 @@ import requests
 from io import BytesIO
 
 
-# Load the CSV file into a DataFrame
+# Load the CSV file into a DataFrame. (Change this path so it's relative to your local path. I usually replace the results.csv with the new one I extracted from BQ.)
+# It's also possible to change the path to your google drive, but then it needs to be through the Google Drive Client.
 df = pd.read_csv('results.csv')
 
 # Get the name of the first column in the DataFrame
@@ -34,6 +35,7 @@ for index, row in df.iterrows():
             first_column_value = row[first_column]
             
             # Convert the image to JPG and save it to a file with the same name as the first column value
+            # Might need to change the path here if you are using Linux or Mac.
             img.convert('RGB').save(f'G:/Shared drives/Shopify-images/{first_column_value}.jpg')
             
             # Update the row with the path to the saved image file
