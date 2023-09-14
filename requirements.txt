@@ -2,3 +2,6 @@ pandas
 Pillow
 requests
 openpyxl
+google-cloud-bigquery==2.33.0
+google-cloud-storage==1.43.0
+Pillow==8.2.0
